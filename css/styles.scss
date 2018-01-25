@@ -264,6 +264,9 @@ html, body {
         transform: scale(1.05);
         @include shadow($darkred);
     }
+    &:focus {
+        outline:0;
+    }
 }
 
 /* MOBILE CHANGES
