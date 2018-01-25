@@ -1,0 +1,362 @@
+@import "variables";
+@import "mixins";
+
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    padding: 0;
+    margin: 0;
+    background-color: $purple;
+}
+
+/* START SCREEN CSS
+-----------------------------*/
+
+.starting-element-container {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background-color: $violet;
+    @include standardFlex;
+
+    .starting-element {
+        @include columnCenterFlex;
+        color: white;
+        h1 {
+            text-transform: capitalize;
+            text-align: center;
+            margin: 5vh 0;
+        }
+    }
+
+    .start-button {
+        border: 1 px solid white;
+        background: transparent;
+        color: white;
+        padding: 5px 15px;
+        line-height: 0;
+        transition: all 0.5s ease-in-out;
+        &:hover, &:focus {
+            transform: scale(1.1);
+        }
+    }
+
+    .invader-pic {
+        width: 100px;
+        height: auto;
+        animation: jump-alien .7s ease-out infinite;
+    }
+
+    @keyframes jump-alien {
+        0% {transform: translate();}
+        50% {transform: translateY(-5vh);}
+    }
+}
+
+/* GENERAL CSS
+-----------------------------*/
+
+.wrapper {
+    @include standardFlex;
+    height: 100vh;
+    width: 100vw;
+    margin: 0 auto;
+}
+
+/* LEADERBOARD SECTION
+-----------------------------*/
+
+.leaderboard-container {
+    @include font;
+    width: 25vw;
+    height: 100vh;
+    background-color: $violet;
+    text-align: center;
+    color: white;
+}
+
+.leaderboard-title {
+    @include standardFlex;
+    height: 7vh;
+    text-align: center;
+    h2 {
+        font-style: italic;
+        width: 25vw;
+        font-size: 2vw;
+    }
+}
+
+.leaderboard {
+    font-size: 1.3vw;
+    width: 100%;
+    height: 93vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    @include columnFlex;
+    text-align: center;
+
+    .leaderboard-score {
+        margin: 2px 0 10px 0;
+    }
+
+    .leaderboard-score-after {
+        width: 25vw;
+        height: 2px;
+        background-color: white;
+        content: "";
+        margin-bottom: 10px;
+    }
+}
+
+/* GAME AREA
+-----------------------------*/
+
+.play-container {
+    width: 50vw;
+    overflow: hidden;
+}
+
+.alien {
+    position: absolute;
+    width: 4vw;
+    height: 4vw;
+    opacity: 0;
+}
+
+.visible {
+    animation: fadeInFromNone 1s ease forwards;
+}
+
+@keyframes fadeInFromNone {
+    0% { opacity: 0;}
+    100% {opacity: 1;}
+}
+
+.deathCircle {
+    border: 1px solid rgba(255, 255, 255, 1);
+    width: 4vw;
+    height: 4vw;
+    background: white;
+    border-radius: 50%;
+    opacity: 1;
+    position: absolute;
+    animation: pulse 0.2s ease forwards;
+}
+
+@keyframes pulse {
+    0% { opacity: 0.2; transform: scale(1,1);}
+    100% {transform: scale(3,3); opacity: 0;}
+}
+
+.deathAnimation {
+    animation: explode 0.2s ease;
+}
+
+@keyframes explode {
+    0% { transform: scale(1); opacity: 1;}
+    100% { transform: scale(1.5); opacity: 0;}
+}
+
+/* INFO SECTION
+-----------------------------*/
+
+.info-container {
+    @include font;
+    width: 25vw;
+    background-color: $violet;
+    text-align: center;
+    color: white;
+    .info-title {
+        height: 7vh;
+        @include standardFlex;
+        text-align: center;
+        h2 {
+            font-style: italic;
+            width: 25vw;
+            font-size: 2vw;
+        }
+    }
+
+    b {
+        font-weight: normal;
+        @include shadow($pink);
+    }
+
+    i {
+        font-style: normal;
+        font-weight: bold;
+        color: $deadred;
+        @include shadow($darkred);
+    }
+}
+
+.stats-list {
+    font-size: 2vw;
+    width: 100%;
+    height: 93vh;
+    @include columnFlex;
+    text-align: center;
+}
+
+.level-box {
+    @include columnSpaceFlex;
+    height: 51vh;
+}
+
+.score-box {
+    @include columnSpaceFlex;
+    padding: 3vh 0;
+    height: 21vh;
+}
+
+.clock-box {
+    @include columnSpaceFlex;
+    padding: 3vh 0 0 0;
+    height: 21vh;
+    .clock {
+        @include shadow($pink);
+    }
+}
+
+.scaleAnimation {
+    animation: scale 0.1s ease backwards;
+}
+
+@keyframes scale {
+    0% {transform: scale(1);}
+    100% {transform: scale(1.15);}
+}
+
+.level {
+    width: 25vw;
+    font-size: 1.5vw;
+    line-height: 2vw;
+    @include shadow($darkblue);
+    margin: 5vh 0 0 0;
+}
+
+/* END OF THE GAME
+-----------------------------*/
+
+.endtext {
+    @include font;
+    color: white;
+    position: absolute;
+    max-width: 350px;
+    left: calc(50% - 10.9rem);
+    line-height: 2rem;
+    top: 40%;
+    font-size: 1.3rem;
+    text-align: center;
+}
+
+.endbutton {
+    @include font;
+    font-size: 1rem;
+    border: 0;
+    background: $violet;
+    color: white;
+    margin: 20px;
+    padding: 10px;
+    &:hover {
+        transform: scale(1.05);
+        @include shadow($darkred);
+    }
+}
+
+/* MOBILE CHANGES
+-----------------------------*/
+
+@media only screen and (max-width: 600px) {
+    body {
+        overflow: hidden;
+    }
+
+    .wrapper {
+        flex-direction: column;
+        height: 100vh;
+        width: 100vw;
+        overflow-x: hidden;
+    }
+
+    /* INFO SECTION */
+
+    .info-container {
+        height: 15%;
+        width: 100vw;
+        @include rowCenterFlex;
+        text-align: center;
+        color: white;
+        .info-title {
+            display: none;
+        }
+    }
+
+
+
+    .stats-list {
+        font-size: 2vh;
+        width: 100%;
+        height: 100%;
+        @include rowFlex;
+        text-align: center;
+    }
+
+    .level-box {
+        height: 100%;
+        width: 40vw;
+        padding: 0;
+    }
+
+    .score-box {
+        padding: 0;
+        line-height: 1.5;
+        order: -1;
+        height: 100%;
+        width: 30vw;
+    }
+
+    .clock-box {
+        padding: 0;
+        height: 100%;
+        width: 30vw;
+    }
+
+    .level {
+        width: 100%;
+        font-size: 1.5vh;
+        line-height: inherit;
+        margin: 0;
+    }
+
+    .level p {
+        padding: 0;
+        margin: 0;
+    }
+
+    /* Highscore SECTION */
+
+    .leaderboard-container {
+        display: none;
+    }
+
+    /* GAME SECTION */
+
+    .play-container {
+        height: 85%;
+        width: 100vw;
+        overflow: hidden;
+    }
+
+    .alien {
+        width: 8vw;
+        height: 8vw;
+    }
+
+    .deathCircle {
+        width: 8vw;
+        height: 8vw;
+    }
+}

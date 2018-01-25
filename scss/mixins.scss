@@ -1,0 +1,42 @@
+@mixin standardFlex {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+@mixin columnFlex {
+    display: flex;
+    flex-direction: column;
+}
+
+@mixin columnCenterFlex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+@mixin columnSpaceFlex {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+@mixin rowFlex {
+    display: flex;
+    flex-direction: row;
+}
+
+@mixin rowCenterFlex {
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+}
+
+@mixin font {
+    font-family: 'Press Start 2P', "Lato", sans-serif;
+}
+
+@mixin shadow($fontColor) {
+    text-shadow: 2px 0px $fontColor;
+}
