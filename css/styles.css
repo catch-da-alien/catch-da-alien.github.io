@@ -1,6 +1,5 @@
 * {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 html, body {
@@ -16,86 +15,59 @@ html, body {
   width: 100vw;
   height: 100vh;
   background-color: #452F74;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -ms-flex-line-pack: center;
-      align-content: center;
+  justify-content: center;
+  align-content: center;
 }
+
 .starting-element-container .starting-element {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   color: white;
 }
+
 .starting-element-container .starting-element h1 {
   text-transform: capitalize;
   text-align: center;
   margin: 5vh 0;
 }
+
 .starting-element-container .start-button {
   border: 1 px solid white;
   background: transparent;
   color: white;
   padding: 5px 15px;
   line-height: 0;
-  -webkit-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;
 }
+
 .starting-element-container .start-button:hover, .starting-element-container .start-button:focus {
-  -webkit-transform: scale(1.1);
-          transform: scale(1.1);
+  transform: scale(1.1);
 }
+
 .starting-element-container .invader-pic {
   width: 100px;
   height: auto;
-  -webkit-animation: jump-alien .7s ease-out infinite;
-          animation: jump-alien .7s ease-out infinite;
+  animation: jump-alien .7s ease-out infinite;
 }
-@-webkit-keyframes jump-alien {
-  0% {
-    -webkit-transform: translate();
-            transform: translate();
-  }
-  50% {
-    -webkit-transform: translateY(-5vh);
-            transform: translateY(-5vh);
-  }
-}
+
 @keyframes jump-alien {
   0% {
-    -webkit-transform: translate();
-            transform: translate();
+    transform: translate();
   }
   50% {
-    -webkit-transform: translateY(-5vh);
-            transform: translateY(-5vh);
+    transform: translateY(-5vh);
   }
 }
+
 /* GENERAL CSS
 -----------------------------*/
 .wrapper {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -ms-flex-line-pack: center;
-      align-content: center;
+  justify-content: center;
+  align-content: center;
   height: 100vh;
   width: 100vw;
   margin: 0 auto;
@@ -113,17 +85,13 @@ html, body {
 }
 
 .leaderboard-title {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -ms-flex-line-pack: center;
-      align-content: center;
+  justify-content: center;
+  align-content: center;
   height: 7vh;
   text-align: center;
 }
+
 .leaderboard-title h2 {
   font-style: italic;
   width: 25vw;
@@ -136,18 +104,15 @@ html, body {
   height: 93vh;
   overflow-y: auto;
   overflow-x: hidden;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
   text-align: center;
 }
+
 .leaderboard .leaderboard-score {
   margin: 2px 0 10px 0;
 }
+
 .leaderboard .leaderboard-score-after {
   width: 25vw;
   height: 2px;
@@ -171,17 +136,7 @@ html, body {
 }
 
 .visible {
-  -webkit-animation: fadeInFromNone 1s ease forwards;
-          animation: fadeInFromNone 1s ease forwards;
-}
-
-@-webkit-keyframes fadeInFromNone {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
+  animation: fadeInFromNone 1s ease forwards;
 }
 
 @keyframes fadeInFromNone {
@@ -192,6 +147,7 @@ html, body {
     opacity: 1;
   }
 }
+
 .deathCircle {
   border: 1px solid white;
   width: 4vw;
@@ -200,65 +156,35 @@ html, body {
   border-radius: 50%;
   opacity: 1;
   position: absolute;
-  -webkit-animation: pulse 0.2s ease forwards;
-          animation: pulse 0.2s ease forwards;
-}
-
-@-webkit-keyframes pulse {
-  0% {
-    opacity: 0.2;
-    -webkit-transform: scale(1, 1);
-            transform: scale(1, 1);
-  }
-  100% {
-    -webkit-transform: scale(3, 3);
-            transform: scale(3, 3);
-    opacity: 0;
-  }
+  animation: pulse 0.2s ease forwards;
 }
 
 @keyframes pulse {
   0% {
     opacity: 0.2;
-    -webkit-transform: scale(1, 1);
-            transform: scale(1, 1);
+    transform: scale(1, 1);
   }
   100% {
-    -webkit-transform: scale(3, 3);
-            transform: scale(3, 3);
+    transform: scale(3, 3);
     opacity: 0;
   }
-}
-.deathAnimation {
-  -webkit-animation: explode 0.2s ease;
-          animation: explode 0.2s ease;
 }
 
-@-webkit-keyframes explode {
-  0% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
-    opacity: 1;
-  }
-  100% {
-    -webkit-transform: scale(1.5);
-            transform: scale(1.5);
-    opacity: 0;
-  }
+.deathAnimation {
+  animation: explode 0.2s ease;
 }
 
 @keyframes explode {
   0% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
+    transform: scale(1);
     opacity: 1;
   }
   100% {
-    -webkit-transform: scale(1.5);
-            transform: scale(1.5);
+    transform: scale(1.5);
     opacity: 0;
   }
 }
+
 /* INFO SECTION
 -----------------------------*/
 .info-container {
@@ -268,27 +194,26 @@ html, body {
   text-align: center;
   color: white;
 }
+
 .info-container .info-title {
   height: 7vh;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -ms-flex-line-pack: center;
-      align-content: center;
+  justify-content: center;
+  align-content: center;
   text-align: center;
 }
+
 .info-container .info-title h2 {
   font-style: italic;
   width: 25vw;
   font-size: 2vw;
 }
+
 .info-container b {
   font-weight: normal;
   text-shadow: 2px 0px #E7AFD3;
 }
+
 .info-container i {
   font-style: normal;
   font-weight: bold;
@@ -300,86 +225,51 @@ html, body {
   font-size: 2vw;
   width: 100%;
   height: 93vh;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
   text-align: center;
 }
 
 .level-box {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  flex-direction: column;
+  justify-content: space-around;
   height: 51vh;
 }
 
 .score-box {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  flex-direction: column;
+  justify-content: space-around;
   padding: 3vh 0;
   height: 21vh;
 }
 
 .clock-box {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  flex-direction: column;
+  justify-content: space-around;
   padding: 3vh 0 0 0;
   height: 21vh;
 }
+
 .clock-box .clock {
   text-shadow: 2px 0px #E7AFD3;
 }
 
 .scaleAnimation {
-  -webkit-animation: scale 0.1s ease backwards;
-          animation: scale 0.1s ease backwards;
-}
-
-@-webkit-keyframes scale {
-  0% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
-  }
-  100% {
-    -webkit-transform: scale(1.15);
-            transform: scale(1.15);
-  }
+  animation: scale 0.1s ease backwards;
 }
 
 @keyframes scale {
   0% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
+    transform: scale(1);
   }
   100% {
-    -webkit-transform: scale(1.15);
-            transform: scale(1.15);
+    transform: scale(1.15);
   }
 }
+
 .level {
   width: 25vw;
   font-size: 1.5vw;
@@ -411,11 +301,12 @@ html, body {
   margin: 20px;
   padding: 10px;
 }
+
 .endbutton:hover {
-  -webkit-transform: scale(1.05);
-          transform: scale(1.05);
+  transform: scale(1.05);
   text-shadow: 2px 0px #220003;
 }
+
 .endbutton:focus {
   outline: 0;
 }
@@ -426,104 +317,77 @@ html, body {
   body {
     overflow: hidden;
   }
-
   .wrapper {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    flex-direction: column;
     height: 100vh;
     width: 100vw;
     overflow-x: hidden;
   }
-
   /* INFO SECTION */
   .info-container {
     height: 15%;
     width: 100vw;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -ms-flex-line-pack: center;
-        align-content: center;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
     text-align: center;
     color: white;
   }
   .info-container .info-title {
     display: none;
   }
-
   .stats-list {
     font-size: 2vh;
     width: 100%;
     height: 100%;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
+    flex-direction: row;
     text-align: center;
   }
-
   .level-box {
     height: 100%;
     width: 40vw;
     padding: 0;
   }
-
   .score-box {
     padding: 0;
     line-height: 1.5;
-    -webkit-box-ordinal-group: 0;
-        -ms-flex-order: -1;
-            order: -1;
+    order: -1;
     height: 100%;
     width: 30vw;
   }
-
   .clock-box {
     padding: 0;
     height: 100%;
     width: 30vw;
   }
-
   .level {
     width: 100%;
     font-size: 1.5vh;
     line-height: inherit;
     margin: 0;
   }
-
   .level p {
     padding: 0;
     margin: 0;
   }
-
   /* Highscore SECTION */
   .leaderboard-container {
     display: none;
   }
-
   /* GAME SECTION */
   .play-container {
     height: 85%;
     width: 100vw;
     overflow: hidden;
   }
-
   .alien {
     width: 8vw;
     height: 8vw;
   }
-
   .deathCircle {
     width: 8vw;
     height: 8vw;
   }
 }
+/*# sourceMappingURL=styles.css.map */

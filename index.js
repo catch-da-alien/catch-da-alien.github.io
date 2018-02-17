@@ -169,6 +169,9 @@ function alienMovement(idmaker, top, left) {
                 if (top > topNew) {
                     top = (top * 100 - 1) / 100;
                     top = Math.round((top + 0.00001) * 100) / 100;
+
+// USE TOFIXED AND LOOK IT UP
+
                     movingAlien.style.top = top + "%";
                 } else {
                     top = (top * 100 + 1) / 100;
